@@ -18,6 +18,6 @@ email = soup.find_all('span', {'class': 'footer-email-custom float-right'})
 for n in email:
     links = n.find_all('a')
     for link1 in links:
-        print(link1.text)
-writer.writerow([link.text, link1.text])
+        print([link1.text])
+writer.writerow([link.text])
 file.close()
