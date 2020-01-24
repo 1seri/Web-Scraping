@@ -1,32 +1,21 @@
 import csv
 import smtplib
 with open('skedar.csv', 'r') as SkedarOrigjinal:
-    reader_O = csv.reader(SkedarOrigjinal, delimiter=',')
+    list1 = csv.reader(SkedarOrigjinal, delimiter=',')
     with open('skedarStatik.csv', 'r') as Skedari1:
-       reader_1 = csv.reader(Skedari1, delimiter=',')
-       try:
-          a = []
-          b = []
-          for row1 in reader_O:
-             a.append(row1)
-             print(type(a))
-          for compare_row in reader_1:
-             b.append(compare_row)
-             print(type(b))
-          for item in range(len(a)):
-              pass
+        list2 = csv.reader(Skedari1, delimiter=',')
+        try:
+            for row in list1:
+                pass
+                for row2 in list2:
+                    if row[0] == row2[0] and row[1]==row2[1] and row[2] ==row2[2] and row[2]:
+                        print('nr nuk kane ndryshuar!')
+                    else:
+                        print('Te dhenat kane ndryshuar....nje email eshte derguar')
 
-          for item1 in range(len(b)):
-              pass
-          if (a[0] == b[0]):
+        except IndexError:
+            print(" ")
 
-              print('Asgje nuk ka ndryshuar')
-
-          else:
-              print('error')
-
-       except IndexError:
-           print(" ")
 
 
 

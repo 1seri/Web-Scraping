@@ -16,7 +16,7 @@ list_nr =[]
 for i in phone:
     links = soup.find_all('li', {'class':'phone-list-number'})
     for link in links:
-        list_nr.append(link.text)
+        list_nr.append([link.text])
 file = open('skedar.csv', 'w')
 writer = csv.writer(file)
 writer.writerow(list_nr)
