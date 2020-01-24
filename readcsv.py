@@ -1,11 +1,11 @@
 import csv
 import smtplib
-with open('skedar.csv') as csvfile:
+with open('skedar1.csv') as csvfile:
     readCSV = csv.reader(csvfile, delimiter = ',')
     try:
         for row in readCSV:
             if row[0] =='+355 (0) 69 3858 950' and row[1] == 'info [at] w3development [dot] net':
-                    print('Numri i kontaktit dhe emaili, nuk kane ndryshuar!')
+                print('Numri i kontaktit dhe emaili, nuk kane ndryshuar!')
             else:
                 print('Te dhenat kane ndryshuar....nje email eshte derguar')
 
