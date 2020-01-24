@@ -1,25 +1,35 @@
 import csv
-csvfile1 = 'skedar.csv'
-csvfile2 = 'skedarStatik.csv'
-def csv_lazy_get(csvfile):
-    with open('skedar.csv') as f:
-        r = csv.reader(f)
-        for row in r:
-            yield row
+import smtplib
+with open('skedar.csv', 'r') as SkedarOrigjinal:
+    reader_O = csv.reader(SkedarOrigjinal, delimiter=',')
+    with open('skedarStatik.csv', 'r') as Skedari1:
+       reader_1 = csv.reader(Skedari1, delimiter=',')
+       try:
+          a = []
+          b = []
+          for row1 in reader_O:
+             a.append(row1)
+             print(type(a))
+          for compare_row in reader_1:
+             b.append(compare_row)
+             print(type(b))
+          for item in range(len(a)):
+              pass
 
-def csv_cmp_lazy(csvfile1, csvfile2):
-    gen_2 = csv_lazy_get(csvfile2)
+          for item1 in range(len(b)):
+              pass
+          if (a[0] == b[0]):
 
-    for row_1 in csv_lazy_get(csvfile1):
-        row_2 = gen_2.next()
+              print('Asgje nuk ka ndryshuar')
 
-        print("row_1: ", row_1)
-        print("row_2: ", row_2)
+          else:
+              print('error')
 
-        if row_2 == row_1:
-            print("row_1 is equal to row_2.")
-        else:
-            print("row_1 is not equal to row_2.")
+       except IndexError:
+           print(" ")
 
-    gen_2.close()
+
+
+
+
 

@@ -21,6 +21,6 @@ file = open('skedar.csv', 'w')
 writer = csv.writer(file)
 writer.writerow(list_nr)
 print(list_nr)
-file.close()
+
 
 
