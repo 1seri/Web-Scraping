@@ -1,5 +1,22 @@
 import csv
+from email.mime.text import MIMEText
 import smtplib
+#!/usr/bin/env python
+def send_email():
+    sender = "from@smtp.mailtrap.io"
+    receiver = "to@smtp.mailtrap.io"
+    msg = MIMEText('This is test mail')
+    msg['Subject'] =('Test mail')
+    msg['From'] = 'from@smtp.mailtrap.io'
+    msg['To'] = 'to@smtp.mailtrap.io'
+    user = '984f98daf98eb1'
+    password = '5aee14525c9521'
+
+    with smtplib.SMTP("smtp.mailtrap.io", 2525) as server:
+        server.login(user, password)
+        server.sendmail(sender, receiver, msg.as_string())
+        print("mail successfully sent")
+
 with open('skedar.csv', 'r') as SkedarOrigjinal:
     list1 = csv.reader(SkedarOrigjinal, delimiter=',')
     with open('skedarStatik.csv', 'r') as Skedari1:
@@ -8,32 +25,28 @@ with open('skedar.csv', 'r') as SkedarOrigjinal:
             for row in list1:
                 pass
                 for row2 in list2:
-                    if (row[0]==row2[0] and row[1]==row2[1] and row[2]==row2[2] and row[2] and row[3]==row2[3] and row[4]==row2[4] and row[5]==row2[5] and
+                    pass
+                    if (row[0]==row2[0] and row[1]==row2[1] and row[2]==row2[2] and row[3]==row2[3] and row[4]==row2[4] and row[5]==row2[5] and
                         row[6]==row2[6] and row[7]==row2[7] and row[8]==row2[8] and row[9]==row2[9] and row[10]==row2[10] and row[11]==row2[11]
                         and row[12]==row2[12] and row[13]==row2[13] and row[14]==row2[14] and row[15]==row2[15]):
-                        print('nr nuk kane ndryshuar!')
-                    else:
-                        #thirr_email('email')
-                        print('te dhenat kane ndryshuar, nje email eshte derguar ')
+                        print('data has not changed :)!')
 
+
+                    else:
+                        send_email()
 
         except IndexError:
-           print(" ")
-            
-def thirr_email(emer):
-    sender = "Private Person <from@smtp.mailtrap.io>"
-    receiver = "A Test User <to@smtp.mailtrap.io>"
+            print(" ")
 
-    message = f"""\
-                           Subject: Hi Mailtrap
-                           To: {receiver}
-                           From: {sender}
 
-                           this works."""
+#if (row[0]!=row2[0] or row[1]!=row2[1] or row[2]!=row2[2] or row[3]!=row2[3] or row[4]!=row2[4] or row[5]!=row2[5] or
+#row[6]!=row2[6] or row[7]!=row2[7] or row[8]!=row2[8] or row[9]!=row2[9] or row[10]!=row2[10] or row[11]!=row2[11]
+#or row[12]!=row2[12] or row[13]!=row2[13] or row[14]!=row2[14] or row[15]!=row2[15]):
+#obj1.send_email()
 
-    with smtplib.SMTP("smtp.mailtrap.io", 2525) as server:
-        server.login("984f98daf98eb1", "5aee14525c9521")
-        server.sendmail(sender, receiver, message)
+
+
+
 
 
 
