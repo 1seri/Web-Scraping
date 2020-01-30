@@ -39,12 +39,6 @@ with open('skedar.csv', 'r') as SkedarOrigjinal:
             print(" ")
 
 
-#if (row[0]!=row2[0] or row[1]!=row2[1] or row[2]!=row2[2] or row[3]!=row2[3] or row[4]!=row2[4] or row[5]!=row2[5] or
-#row[6]!=row2[6] or row[7]!=row2[7] or row[8]!=row2[8] or row[9]!=row2[9] or row[10]!=row2[10] or row[11]!=row2[11]
-#or row[12]!=row2[12] or row[13]!=row2[13] or row[14]!=row2[14] or row[15]!=row2[15]):
-#obj1.send_email()
-
-
 
 
 
